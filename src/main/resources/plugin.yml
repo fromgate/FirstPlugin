@@ -1,0 +1,11 @@
+name: FirstPlugin
+main: me.fromgate.firstplugin.FirstPlugin
+version: "0.0.1"
+author: fromgate, nukkit.ru
+api: ["1.0.0"]
+description: My first plugin
+commands:
+  news:
+    aliases: ["info"]
+    description: Show (and set current news)
+    usage: "/news [set <Anouncement>]"

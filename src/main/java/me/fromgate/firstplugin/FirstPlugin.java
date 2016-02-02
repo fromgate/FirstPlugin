@@ -31,7 +31,7 @@ public class FirstPlugin extends PluginBase {
 
     public void loadCfg(){
         this.reloadConfig();
-        this.helloMessage = this.getConfig().getNested("hello-message","Сообщение по умолчанию");
+        this.helloMessage = this.getConfig().getString("hello-message","Сообщение по умолчанию");
     }
 
     @Override
@@ -52,7 +52,7 @@ public class FirstPlugin extends PluginBase {
                 }
                 if (player != null) sb.append(" &3(").append(player.getName()).append(")");
                 this.helloMessage = sb.toString();
-                this.getConfig().setNested("hello-message",this.helloMessage);
+                this.getConfig().set("hello-message",this.helloMessage);
                 this.saveConfig();
                 sender.sendMessage(TextFormat.colorize("&6You configured new announcement:"));
                 sender.sendMessage(TextFormat.colorize("&3[NEWS] &b"+this.helloMessage));
